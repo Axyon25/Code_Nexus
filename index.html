@@ -4,7 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>code-nexus</title>
+    <meta
+      name="description"
+      content="Truth Nuke is an AI-powered brand governance platform. Detect incorrect claims, outdated facts and off-brand content before you publish."
+    />
+    <meta name="theme-color" content="#f2f5fa" />
+    <title>Truth Nuke — Nuke inconsistencies before you publish.</title>
+    <script>
+      // Apply the saved theme before first paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var saved = localStorage.getItem('truthnuke-theme')
+          var mode = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system'
+          var dark =
+            mode === 'dark' ||
+            (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+        } catch (e) {
+          /* no-op */
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
